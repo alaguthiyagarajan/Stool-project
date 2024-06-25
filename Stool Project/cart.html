@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <p id="msg1"></p><span id="msg"></span><p id="cart1"></p>
+    <p id="cart2"></p>
+    <p id="cart3"></p>
+    <p id="cart4"></p>
+    <p id="cart5"></p>
+    <p id="cart6"></p>
+    <p id="cart7"></p>
+    <p id="cart8"></p>
+    <p id="cart9"></p>
+    <p id="cart10"></p>
+    <p id="cart11"></p>
+    <p id="cart12"></p>
+    <p id="cart13"></p>
+    <p id="cart14"></p>
+    
+    <script>
+          var button=document.getElementById("butt")
+         function btn(){
+            if(localStorage.length==0)
+            {
+                document.getElementById("butt").disabled = true;
+                alert("Your cart is empty")
+            }
+            else{
+                window.location.href = "./payments.html";
+        }
+        }
+        
+        function fresh(){
+            if(localStorage.length==0){
+                
+                document.getElementById("msg").innerHTML='<div class="m-5 p-2 bg-red-800 text-center text-white text-[30px]">Cart is Empty</div>';
+                
+            }
+          
+       
+            else{
+            document.getElementById("msg1").innerHTML='<div class="m-5 p-2 bg-red-800 text-center text-white text-[30px]">Your cart </div>';
+            document.getElementById("cart1").innerHTML = localStorage.getItem("product1");
+            document.getElementById("cart2").innerHTML = localStorage.getItem("product2");
+            document.getElementById("cart3").innerHTML = localStorage.getItem("product3");
+            document.getElementById("cart4").innerHTML = localStorage.getItem("product4");
+            document.getElementById("cart5").innerHTML = localStorage.getItem("product5");
+            document.getElementById("cart6").innerHTML = localStorage.getItem("product6");
+            document.getElementById("cart7").innerHTML = localStorage.getItem("product7");
+            document.getElementById("cart8").innerHTML = localStorage.getItem("product8");
+            document.getElementById("cart9").innerHTML = localStorage.getItem("product9");
+            document.getElementById("cart10").innerHTML = localStorage.getItem("product10");
+            document.getElementById("cart11").innerHTML = localStorage.getItem("product11");
+            document.getElementById("cart12").innerHTML = localStorage.getItem("product12");
+            document.getElementById("cart13").innerHTML = localStorage.getItem("product13");
+            document.getElementById("cart14").innerHTML = localStorage.getItem("product14");
+            }
+        }
+
+        fresh();
+
+
+        function remove(key){
+            window.localStorage.removeItem(key);
+            fresh();
+        }
+       
+    </script>
+<button class="m-[10%] p-2 border border-black ml-[45%] hover:bg-green-800" onclick="btn()" id="butt">Payout Now !</button></a>
+    
+</body>
+
+</html>
